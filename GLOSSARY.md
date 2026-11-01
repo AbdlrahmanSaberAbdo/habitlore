@@ -105,3 +105,19 @@ _Avoid_: Exporter, formatter, generator
 **Corrections per Task**:
 The number of Corrections in a Task, averaged over a Workflow. The main sign that agents are improving.
 _Avoid_: Error rate, friction
+
+**Before window**, **After window**:
+Two equal-length periods either side of the moment a Suggestion was Accepted.
+_Avoid_: Baseline period
+
+**Control**:
+The person's Workflows and Correction Clusters that have no Accepted Suggestion, measured over the same Before and After windows, so changes that touch everything (a new model, say) are not credited to a Suggestion.
+_Avoid_: Baseline, comparison group
+
+**Verdict**:
+Whether one Accepted Suggestion helped: Helped, Didn't help, or Not enough data.
+_Avoid_: Result, score, outcome
+
+**Pilot**:
+The time-boxed proof that habitlore helps: the author and three colleagues, each measured for six weeks after their first Accepted Suggestion.
+_Avoid_: Trial, beta, study
