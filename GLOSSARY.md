@@ -8,6 +8,18 @@ habitlore reads past AI coding sessions, finds the work a person keeps repeating
 A coding tool whose sessions habitlore reads, such as Claude Code or Cursor.
 _Avoid_: Provider, source, tool, agent
 
+**Code Host**:
+A service holding the person's Pull Requests and their review, such as GitHub. Not a Harness: no agent works in it.
+_Avoid_: Source, forge, platform
+
+**Pull Request**:
+A proposed change on a Code Host, reviewed before it merges. Neither a Session nor a Task: it may come from one Session, several, or none.
+_Avoid_: PR, merge request, change
+
+**Review Comment**:
+A reviewer's opening comment on lines of a Pull Request's diff. Replies in its thread are its context, not further Review Comments. It is not a Correction, because it is not addressed to an agent.
+_Avoid_: Review, feedback, note
+
 **Model Provider**:
 The LLM service habitlore itself calls during Analysis, chosen by the user.
 _Avoid_: Provider (alone), LLM, backend
@@ -21,7 +33,7 @@ A message the person typed in a Session. Text written by the agent, subagents or
 _Avoid_: Prompt, turn
 
 **Adapter**:
-The part that reads one Harness's storage during a Scan.
+The part that reads one Harness's storage, or one Code Host, during a Scan.
 _Avoid_: Parser, importer, connector
 
 **Project**:
@@ -31,7 +43,7 @@ _Avoid_: Workspace, repo, directory, cwd
 ## Analysis
 
 **Scan**:
-Reading Harness storage into habitlore's local store. Uses no Model Provider.
+Reading Harness storage and Code Hosts into habitlore's local store. Uses no Model Provider.
 _Avoid_: Import, sync, ingest
 
 **Analysis**:
@@ -50,16 +62,20 @@ _Avoid_: Label, category, type
 A User Message that rejects or fixes something the agent did. Asking for more, or changing one's own mind, is a Follow-up instead.
 _Avoid_: Fix, redirect, pushback
 
+**Upheld**:
+A Review Comment the Pull Request's author took: the commented code changed afterwards, or the author agreed. Pushback the reviewer accepted, or a thread closed with the code unchanged, is not Upheld. Only Upheld Review Comments become Evidence.
+_Avoid_: Accepted, applied, valid
+
 **Cluster**:
 A group of similar Tasks.
 _Avoid_: Pattern, group, habit
 
 **Correction Cluster**:
-A group of similar Corrections, gathered across all Tasks regardless of Workflow.
+A group of similar Corrections and Upheld Review Comments on the person's own Pull Requests, gathered regardless of Workflow. Review Comments from bots can join one but never start one.
 _Avoid_: Repeated feedback, pet peeve
 
 **Repeat Rule**:
-The threshold a Cluster or Correction Cluster must pass before it earns a Suggestion: by default at least 3 members across at least 2 Sessions within 60 days.
+The threshold a Cluster or Correction Cluster must pass before it earns a Suggestion: by default at least 3 members across at least 2 Sessions or Pull Requests within 60 days.
 _Avoid_: Threshold, minimum
 
 **Workflow**:
@@ -81,7 +97,7 @@ The kind of Suggestion that is a one-line standing instruction. Rules come from 
 _Avoid_: Guideline, preference, convention
 
 **Evidence**:
-The Tasks or Corrections a Suggestion was derived from, each linked to its Session.
+The Tasks, Corrections or Upheld Review Comments a Suggestion was derived from, each linked to its Session or Pull Request.
 _Avoid_: Sources, references, citations
 
 **Target**:
