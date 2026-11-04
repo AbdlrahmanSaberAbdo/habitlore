@@ -155,3 +155,11 @@ _Avoid_: Package, export, share, contribution
 **Evidence summary**:
 The counts that stand in for Evidence in a Shared Suggestion: how many Tasks and Sessions, over which dates, in which Harness. It never names a Task, Session, Project or User Message.
 _Avoid_: Anonymized Evidence, stats
+
+**Team Library**:
+The one place a Team's Shared Suggestions live, which every member's habitlore reads. At first it is a private GitHub repository, holding one readable file per Shared Suggestion. A Team has exactly one Team Library.
+_Avoid_: Hub, store, registry, repo
+
+**Withdrawn**:
+The state of a Shared Suggestion its sharer stopped offering. It stays in the Team Library's history; teammates are no longer offered it, and copies they already Accepted stay theirs.
+_Avoid_: Deleted, recalled, revoked
