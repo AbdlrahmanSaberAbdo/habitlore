@@ -6,7 +6,7 @@ Local-first tool that reads AI coding sessions (Claude Code and Cursor to start)
 
 ### Issue tracker
 
-GitHub Issues on AbdlrahmanSaberAbdo/sessionlore, via the `gh` CLI. See `docs/agents/issue-tracker.md`.
+GitHub Issues on AbdlrahmanSaberAbdo/habitlore, via the `gh` CLI. See `docs/agents/issue-tracker.md`.
 
 ### Triage labels
 
