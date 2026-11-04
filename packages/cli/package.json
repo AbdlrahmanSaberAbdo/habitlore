@@ -5,12 +5,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AbdlrahmanSaberAbdo/sessionlore.git",
+    "url": "git+https://github.com/AbdlrahmanSaberAbdo/habitlore.git",
     "directory": "packages/cli"
   },
-  "homepage": "https://github.com/AbdlrahmanSaberAbdo/sessionlore#readme",
+  "homepage": "https://github.com/AbdlrahmanSaberAbdo/habitlore#readme",
   "bugs": {
-    "url": "https://github.com/AbdlrahmanSaberAbdo/sessionlore/issues"
+    "url": "https://github.com/AbdlrahmanSaberAbdo/habitlore/issues"
   },
   "keywords": [
     "claude-code",
