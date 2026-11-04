@@ -1,15 +1,15 @@
-# sessionlore
+# habitlore
 
-sessionlore reads past AI coding sessions, finds the work a person keeps repeating, and turns it into Suggestions that teach their agents.
+habitlore reads past AI coding sessions, finds the work a person keeps repeating, and turns it into Suggestions that teach their agents.
 
 ## Sources
 
 **Harness**:
-A coding tool whose sessions sessionlore reads, such as Claude Code or Cursor.
+A coding tool whose sessions habitlore reads, such as Claude Code or Cursor.
 _Avoid_: Provider, source, tool, agent
 
 **Model Provider**:
-The LLM service sessionlore itself calls during Analysis, chosen by the user.
+The LLM service habitlore itself calls during Analysis, chosen by the user.
 _Avoid_: Provider (alone), LLM, backend
 
 **Session**:
@@ -31,7 +31,7 @@ _Avoid_: Workspace, repo, directory, cwd
 ## Analysis
 
 **Scan**:
-Reading Harness storage into sessionlore's local store. Uses no Model Provider.
+Reading Harness storage into habitlore's local store. Uses no Model Provider.
 _Avoid_: Import, sync, ingest
 
 **Analysis**:
@@ -65,6 +65,10 @@ _Avoid_: Threshold, minimum
 **Workflow**:
 A Cluster that passes the Repeat Rule. A Workflow lasts across Analyses: new Tasks join it, and it is only reshaped when the person explicitly asks for a full re-cluster.
 _Avoid_: Pattern, routine, habit
+
+**Near-Workflow**:
+A Cluster that does not pass the Repeat Rule yet but is big enough to show. It earns no Suggestion until it becomes a Workflow.
+_Avoid_: Candidate, almost-Workflow, emerging pattern
 
 ## Suggestions
 

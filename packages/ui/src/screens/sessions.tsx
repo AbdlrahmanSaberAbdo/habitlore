@@ -1,4 +1,4 @@
-import type { SessionTaskView, SessionView, SessionViewMessage } from "@sessionlore/core";
+import type { SessionTaskView, SessionView, SessionViewMessage } from "@habitlore/core";
 import { Fragment } from "react";
 import { harnessName, plural } from "../components/filters.js";
 import { Link } from "../router.js";

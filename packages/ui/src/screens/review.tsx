@@ -1,4 +1,4 @@
-import type { ReviewQueue, ReviewQueueItem, Scope, ScopeChoice, SuggestionForm, SuggestionReview } from "@sessionlore/core";
+import type { ReviewQueue, ReviewQueueItem, Scope, ScopeChoice, SuggestionForm, SuggestionReview } from "@habitlore/core";
 import { useState } from "react";
 import { harnessName, plural } from "../components/filters.js";
 import { Link, sessionPath, suggestionPath } from "../router.js";
@@ -19,7 +19,7 @@ export function PendingScreen({ queue }: { queue: ReviewQueue }) {
         <p className="lede">
           {count === 0 ? (
             <>
-              No Pending Suggestions. Run <code>sessionlore suggest</code> to write some from your analyzed Sessions.
+              No Pending Suggestions. Run <code>habitlore suggest</code> to write some from your analyzed Sessions.
             </>
           ) : (
             "Suggestions drafted from what you repeat in your Sessions. Nothing changes until you accept one."

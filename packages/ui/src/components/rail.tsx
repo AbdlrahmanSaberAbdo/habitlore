@@ -1,4 +1,4 @@
-import type { Overview } from "@sessionlore/core";
+import type { Overview } from "@habitlore/core";
 import type { ReactNode } from "react";
 import { Link } from "../router.js";
 import { plural } from "./filters.js";
@@ -24,7 +24,7 @@ export function TopBar({ counts }: { counts: Counts | null }) {
           <path className="logo-lines" d="M6 8h10M6 11h6M6 14h8" strokeWidth="1.6" strokeLinecap="round" />
           <circle className="logo-dot" cx="16" cy="14" r="1.6" />
         </svg>
-        sessionlore
+        habitlore
       </Link>
       {counts ? (
         <p className="read-from">

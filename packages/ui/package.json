@@ -1,5 +1,5 @@
 {
-  "name": "@sessionlore/ui",
+  "name": "@habitlore/ui",
   "private": true,
   "type": "module",
   "scripts": {
@@ -9,7 +9,7 @@
   "devDependencies": {
     "@fontsource-variable/geist": "^5.3.0",
     "@fontsource-variable/geist-mono": "^5.3.0",
-    "@sessionlore/core": "workspace:*",
+    "@habitlore/core": "workspace:*",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "react": "19.2.0",

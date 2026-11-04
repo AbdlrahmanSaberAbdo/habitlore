@@ -1,4 +1,4 @@
-import type { AcceptResult, Overview, ReviewQueue, SessionView, SuggestionReview, WorkflowDetail, WorkflowList } from "@sessionlore/core";
+import type { AcceptResult, Overview, ReviewQueue, SessionView, SuggestionReview, WorkflowDetail, WorkflowList } from "@habitlore/core";
 import { useEffect, useState, type ReactNode } from "react";
 import { sendJson, useApi, type Loaded } from "./api.js";
 import { Rail, TopBar, type RailSection } from "./components/rail.js";
@@ -95,7 +95,7 @@ function ReviewPage({ id, changed }: { id: string; changed: () => void }) {
     setScope: (choice) => act(() => sendJson("PUT", `${path}/scope`, choice).then(() => "Scope changed."))(),
     accept: act(async () => {
       const result = await sendJson<AcceptResult>("POST", `${path}/accept`);
-      const backedUp = result.backups.length > 0 ? ` Backed up ${result.backups.length} existing file(s); \`sessionlore restore ${id}\` puts them back.` : "";
+      const backedUp = result.backups.length > 0 ? ` Backed up ${result.backups.length} existing file(s); \`habitlore restore ${id}\` puts them back.` : "";
       return `Accepted. Wrote ${result.files.map((f) => f.path).join(", ")}.${backedUp}`;
     }),
     reject: act(() => sendJson("POST", `${path}/reject`).then(() => "Rejected. It won't be suggested again.")),
@@ -140,7 +140,7 @@ export function Dashboard() {
   const [version, setVersion] = useState(0);
   const changed = () => setVersion((v) => v + 1);
   useEffect(() => {
-    document.title = matched ? `${matched.screen.title} · sessionlore` : "sessionlore";
+    document.title = matched ? `${matched.screen.title} · habitlore` : "habitlore";
   }, [matched?.screen]);
   return (
     <Chrome section={matched?.screen.section ?? null} version={version}>

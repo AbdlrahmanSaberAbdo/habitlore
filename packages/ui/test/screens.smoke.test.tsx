@@ -1,6 +1,6 @@
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
-import type { FilterOptions, ReviewQueue, SessionView, SuggestionReview, WorkflowDetail, WorkflowList } from "@sessionlore/core";
+import type { FilterOptions, ReviewQueue, SessionView, SuggestionReview, WorkflowDetail, WorkflowList } from "@habitlore/core";
 import { Rail, TopBar } from "../src/components/rail.js";
 import { CorrectionsScreen } from "../src/screens/corrections.js";
 import { PendingScreen, ReviewScreen, type ReviewActions } from "../src/screens/review.js";
@@ -228,7 +228,7 @@ describe("UI screens", () => {
     const loaded = renderToStaticMarkup(<TopBar counts={{ sessions: 12, tasks: 31, workflows: 2 }} />);
     const loading = renderToStaticMarkup(<TopBar counts={null} />);
 
-    expect(loaded).toMatch(/<a href="\/" class="wordmark">[^]*sessionlore<\/a>/);
+    expect(loaded).toMatch(/<a href="\/" class="wordmark">[^]*habitlore<\/a>/);
     expect(loaded).toContain("Read from 12 Sessions and 31 Tasks");
     expect(loading).not.toContain("Read from");
   });
@@ -249,14 +249,14 @@ describe("UI screens", () => {
     const html = renderToStaticMarkup(<PendingScreen queue={{ suggestions: [] }} />);
 
     expect(html).toContain("Nothing to review");
-    expect(html).toContain("<code>sessionlore suggest</code>");
+    expect(html).toContain("<code>habitlore suggest</code>");
     expect(html).not.toContain("<h2>Skills</h2>");
   });
 
   it("Corrections says where to see Correction Clusters for now", () => {
     const html = renderToStaticMarkup(<CorrectionsScreen />);
 
-    expect(html).toContain("<code>sessionlore corrections</code>");
+    expect(html).toContain("<code>habitlore corrections</code>");
   });
 
   it("A Suggestion in review shows what accepting writes, an edit form, the Scope, actions and Evidence links", () => {

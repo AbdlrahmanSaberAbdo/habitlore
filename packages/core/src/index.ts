@@ -86,6 +86,7 @@ export { systemClock, type Clock, type Embedder, type Env, type ModelProvider, t
 export { resolveProject, type ResolvedProject } from "./project.js";
 export { openReadOnlyDatabase, type ReadOnlyDatabase } from "./store/database.js";
 export {
+  adoptSessionloreDataDir,
   dataDir,
   storePath,
   type ClusterTask,
