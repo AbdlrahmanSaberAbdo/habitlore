@@ -82,10 +82,14 @@ _Avoid_: Threshold, minimum
 A Cluster that passes the Repeat Rule. A Workflow lasts across Analyses: new Tasks join it, and it is only reshaped when the person explicitly asks for a full re-cluster.
 _Avoid_: Pattern, routine, habit
 
+**Near-Workflow**:
+A Cluster that does not pass the Repeat Rule yet but is big enough to show. It earns no Suggestion until it becomes a Workflow.
+_Avoid_: Candidate, almost-Workflow, emerging pattern
+
 ## Suggestions
 
 **Suggestion**:
-A proposed change to how the person's agents behave, derived from a Workflow or a Correction Cluster.
+A proposed change to how the person's agents behave, derived from a Workflow, a Correction Cluster, or a teammate's Shared Suggestion.
 _Avoid_: Draft, recommendation, proposal
 
 **Skill**:
@@ -97,7 +101,7 @@ The kind of Suggestion that is a one-line standing instruction. Rules come from 
 _Avoid_: Guideline, preference, convention
 
 **Evidence**:
-The Tasks, Corrections or Upheld Review Comments a Suggestion was derived from, each linked to its Session or Pull Request.
+The Tasks, Corrections or Upheld Review Comments a Suggestion was derived from, each linked to its Session or Pull Request. A Suggestion received from a Shared Suggestion has only its Evidence summary.
 _Avoid_: Sources, references, citations
 
 **Target**:
@@ -121,3 +125,33 @@ _Avoid_: Exporter, formatter, generator
 **Corrections per Task**:
 The number of Corrections in a Task, averaged over a Workflow. The main sign that agents are improving.
 _Avoid_: Error rate, friction
+
+**Before window**, **After window**:
+Two equal-length periods either side of the moment a Suggestion was Accepted.
+_Avoid_: Baseline period
+
+**Control**:
+The person's Workflows and Correction Clusters that have no Accepted Suggestion, measured over the same Before and After windows, so changes that touch everything (a new model, say) are not credited to a Suggestion.
+_Avoid_: Baseline, comparison group
+
+**Verdict**:
+Whether one Accepted Suggestion helped: Helped, Didn't help, or Not enough data.
+_Avoid_: Result, score, outcome
+
+**Pilot**:
+The time-boxed proof that habitlore helps: the author and three colleagues, each measured for six weeks after their first Accepted Suggestion.
+_Avoid_: Trial, beta, study
+
+## Teams
+
+**Team**:
+A group of people who choose to share derived knowledge with each other.
+_Avoid_: Organisation, workspace, company, org
+
+**Shared Suggestion**:
+An Accepted Skill or Rule a person chose to share with a Team, in the reviewed form that left their machine. It names the person who shared it, and it reaches teammates as a Pending Suggestion. Withdrawing it stops it being offered; copies teammates already Accepted stay theirs.
+_Avoid_: Package, export, share, contribution
+
+**Evidence summary**:
+The counts that stand in for Evidence in a Shared Suggestion: how many Tasks and Sessions, over which dates, in which Harness. It never names a Task, Session, Project or User Message.
+_Avoid_: Anonymized Evidence, stats
