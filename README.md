@@ -159,7 +159,7 @@ Every text is passed through secret redaction first: private keys, passwords in 
 
 ## Roadmap
 
-See [docs/v2-plan.md](https://github.com/AbdlrahmanSaberAbdo/sessionlore/blob/main/docs/v2-plan.md) for what comes after v1.
+See [docs/v2-plan.md](https://github.com/AbdlrahmanSaberAbdo/habitlore/blob/main/docs/v2-plan.md) for what comes after v1.
 
 ## License
 
