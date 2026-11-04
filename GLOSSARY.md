@@ -105,3 +105,13 @@ _Avoid_: Exporter, formatter, generator
 **Corrections per Task**:
 The number of Corrections in a Task, averaged over a Workflow. The main sign that agents are improving.
 _Avoid_: Error rate, friction
+
+## Teams
+
+**Team Library**:
+The one place a Team's Shared Suggestions live, which every member's habitlore reads. At first it is a private GitHub repository, holding one readable file per Shared Suggestion. A Team has exactly one Team Library.
+_Avoid_: Hub, store, registry, repo
+
+**Withdrawn**:
+The state of a Shared Suggestion its sharer stopped offering. It stays in the Team Library's history; teammates are no longer offered it, and copies they already Accepted stay theirs.
+_Avoid_: Deleted, recalled, revoked
